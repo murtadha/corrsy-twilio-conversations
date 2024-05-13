@@ -78,10 +78,14 @@ const ConversationView: React.FC<SingleConvoProps> = (
     lastMessage,
     unreadMessagesCount,
     use24hTimeFormat,
+    messages,
   } = props;
   const [backgroundColor, setBackgroundColor] = useState();
+  const author = messages
+    ?.find((i) => i.author)
+    ?.author?.replace("whatsapp:", "");
   const title = truncateMiddle(
-    convo.friendlyName ?? convo.sid,
+    convo.friendlyName ?? author ?? convo.sid,
     calculateUnreadMessagesWidth(unreadMessagesCount)
   );
   const theme = useTheme();

@@ -52,7 +52,7 @@ const ConversationDetails: React.FC<ConversationDetailsProps> = (
       if (event.key === "Enter") {
         setIsEditing(false);
         if (editedText !== props.convo.friendlyName) {
-          props.updateConvoName(editedText);
+          // props.updateConvoName(editedText);
         }
       }
     };
